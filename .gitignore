@@ -1,0 +1,5 @@
+# Files/directories to ignore
+alumni_matcher.db     # The SQLite database file created by the script
+__pycache__/          # Python's temporary cache directory
+*.pyc                 # Compiled Python files
+.DS_Store             # macOS system files (good practice to include)
