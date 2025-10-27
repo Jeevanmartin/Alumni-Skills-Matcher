@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Skills Matcher</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">Alumni Skills Matcher</div>
+    </header>
+
+    <main>
+        <section class="search-section">
+            <h1>Connect with Expert Alumni Mentors</h1>
+            <p>Search for a specific skill to find the right connection.</p>
+            
+            <form method="POST" action="/" class="search-form">
+                <input type="text" 
+                       id="skill" 
+                       name="skill" 
+                       placeholder="Search for skills (e.g., Python, SQL)..."
+                       value="{{ current_skill }}" 
+                       required
+                       list="skillSuggestions"> <datalist id="skillSuggestions">
+                    {% for skill in all_skills %}
+                        <option value="{{ skill }}">
+                    {% endfor %}
+                </datalist>
+                
+                <button type="submit">Find Mentors</button>
+            </form>
+        </section>
+
+        <section class="results-section">
+            {% if alumni %}
+                <h2>Alumni with "{{ current_skill }}" ({{ alumni | length }} Found)</h2>
+                <div class="alumni-grid">
+                    {% for alumnus in alumni %}
+                    <div class="alumni-card {{ alumnus.ProficiencyLevel | lower }}">
+                        <div class="card-header">
+                            <h3>{{ alumnus.FirstName }} {{ alumnus.LastName }}</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="skill-match">
+                                **{{ alumnus.SkillName }}**: 
+                                <span class="proficiency-tag">{{ alumnus.ProficiencyLevel }}</span>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="contact-btn">Contact Alumni</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="no-results">Sorry, no alumni found with the skill **"{{ current_skill }}"**. Try a different term or check the dropdown list.</p>
+            {% endif %}
+        </section>
+    </main>
+</body>
+</html>

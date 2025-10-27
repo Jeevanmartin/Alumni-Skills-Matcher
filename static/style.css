@@ -1,0 +1,169 @@
+/* General Styles */
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --expert-color: #28a745;
+    --intermediate-color: #ffc107;
+    --beginner-color: #17a2b8;
+    --bg-color: #f8f9fa;
+    --text-color: #343a40;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 5%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Search Section Styling */
+.search-section {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.search-section h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.search-form input {
+    padding: 10px 15px;
+    width: 60%;
+    max-width: 500px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Results Grid Styling */
+.results-section h2 {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+.alumni-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.alumni-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+    border-left: 5px solid; /* For proficiency color */
+}
+
+.alumni-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    padding: 15px;
+    background-color: #e9ecef;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.skill-match {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.proficiency-tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: white;
+    font-weight: normal;
+}
+
+/* Proficiency Colors */
+.expert { border-left-color: var(--expert-color); }
+.expert .proficiency-tag { background-color: var(--expert-color); }
+
+.intermediate { border-left-color: var(--intermediate-color); }
+.intermediate .proficiency-tag { background-color: var(--intermediate-color); }
+
+.beginner { border-left-color: var(--beginner-color); }
+.beginner .proficiency-tag { background-color: var(--beginner-color); }
+
+/* Contact Button */
+.contact-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-btn:hover {
+    background-color: #5a6268;
+}
+
+.no-results {
+    text-align: center;
+    padding: 20px;
+    color: #dc3545;
+    border: 1px dashed #dc3545;
+    background-color: #f8d7da;
+    border-radius: 5px;
+}
