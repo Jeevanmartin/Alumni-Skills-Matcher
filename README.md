@@ -18,7 +18,7 @@ To efficiently match current students or faculty seeking specific expertise with
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repo-link>
+    git clone https://github.com/Jeevanmartin/Alumni-Skills-Matcher
     cd University-Alumni-Skills-Matcher
     ```
 
